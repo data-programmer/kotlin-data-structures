@@ -24,10 +24,12 @@ class LinkedListQueue : IDataStructure {
     // Get size of linked list queue
     fun size(): Int = singlyLinkedList.size
 
+    // Print state of queue
     override fun print() {
         singlyLinkedList.print()
     }
 
+    // Driver example
     override fun execute() {
         enqueue("Node A", 1)
         print()
