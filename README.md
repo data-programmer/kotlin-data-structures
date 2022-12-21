@@ -1,6 +1,6 @@
 # Kotlin Data Structures
 
-This is a base repository for data structures I've created in the Kotlin programming language. The repository contains examples of various data structures for educational and review purposes.
+This is a repository for data structures I've created in the Kotlin programming language. The data structures included in this repository are for educational and review purposes.
 
 # Setup
 
