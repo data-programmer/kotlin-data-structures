@@ -1,7 +1,28 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import linked_lists.CircularDoublyLinkedList
+import linked_lists.CircularSinglyLinkedList
+import linked_lists.DoublyLinkedList
+import linked_lists.SinglyLinkedList
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+val linkedLists: List<IDataStructure> = listOf(
+    SinglyLinkedList(),
+    CircularSinglyLinkedList(),
+    DoublyLinkedList(),
+    CircularDoublyLinkedList()
+)
+
+val binaryTrees: List<IDataStructure> = emptyList()
+
+val tables: List<IDataStructure> = emptyList()
+
+fun main() {
+    // Execute all list data structures
+    linkedLists.forEach { listStructure ->
+        println(listStructure::class.java)
+        listStructure.execute()
+    }
+
+    // Execute all table data structures
+
+    // Execute all binary tree data structures
+
 }

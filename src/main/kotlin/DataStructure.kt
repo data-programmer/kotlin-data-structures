@@ -1,3 +1,0 @@
-interface DataStructure {
-    fun execute()
-}
