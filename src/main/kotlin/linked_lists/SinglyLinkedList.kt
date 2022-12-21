@@ -6,7 +6,7 @@ class SinglyLinkedList : IDataStructure {
 
     private var head: Node? = null
     private var tail: Node? = null
-    private var size: Int = 0
+    var size: Int = 0
 
     // Insert node at beginning of list
     fun insert(label: String, data: Int) {
@@ -25,16 +25,19 @@ class SinglyLinkedList : IDataStructure {
     }
 
     // Remove node at start of list
-    fun removeFirst(): Node? {
+    fun removeFirst(): Int? {
         return head?.let { oldHead ->
             head = oldHead.next
             size--
-            oldHead
+            oldHead.data
         }
     }
 
+    // Check first item in linked list
+    fun first(): Int? = head?.data
+
     // Check if list is empty
-    private fun isEmpty(): Boolean = size == 0
+    fun isEmpty(): Boolean = size == 0
 
     // Print the state of the list
     override fun print() {

@@ -6,7 +6,7 @@ class DoublyLinkedList : IDataStructure {
 
     private var head: Node? = null
     private var tail: Node? = null
-    private var size: Int = 0
+    var size: Int = 0
 
     init {
         head = Node("Head Sentinel", -1, null, null)
@@ -55,7 +55,7 @@ class DoublyLinkedList : IDataStructure {
     }
 
     // Check if list is empty
-    private fun isEmpty(): Boolean = size == 0
+    fun isEmpty(): Boolean = size == 0
 
     // Print the state of the list
     override fun print() {

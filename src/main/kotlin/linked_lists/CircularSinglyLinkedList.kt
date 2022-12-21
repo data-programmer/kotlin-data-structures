@@ -5,7 +5,7 @@ import IDataStructure
 class CircularSinglyLinkedList : IDataStructure {
 
     private var tail: Node? = null
-    private var size: Int = 0
+    var size: Int = 0
 
     // Insert node at beginning of list
     fun insert(label: String, data: Int) {
@@ -36,7 +36,7 @@ class CircularSinglyLinkedList : IDataStructure {
     }
 
     // Check if list is empty
-    private fun isEmpty(): Boolean = size == 0
+    fun isEmpty(): Boolean = size == 0
 
     // Print the state of the list
     override fun print() {
