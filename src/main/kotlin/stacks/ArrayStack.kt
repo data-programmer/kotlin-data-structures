@@ -2,23 +2,27 @@ package stacks
 
 import IDataStructure
 
-class ArrayStack : IDataStructure {
+class ArrayStack : IDataStructure, IStack {
 
     private var arrayStack = arrayListOf<Int>()
 
     // Push new item onto the stack
-    fun push(value: Int) {
+    override fun push(label: String, value: Int) {
+        // Ignore label in this stack
         arrayStack.add(value)
     }
 
     // Peak item on top of stack
-    fun top(): Int? = arrayStack.lastOrNull()
+    override fun top(): Int? = arrayStack.lastOrNull()
 
     // Pop item off the top of stack
-    fun pop(): Int? = arrayStack.removeLastOrNull()
+    override fun pop(): Int? = arrayStack.removeLastOrNull()
 
     // Get size of array stack
-    fun size(): Int = arrayStack.size
+    override fun size(): Int = arrayStack.size
+
+    // Check if list is empty
+    override fun isEmpty() = arrayStack.isEmpty()
 
     // Print content of array stack
     override fun print() {
@@ -29,11 +33,11 @@ class ArrayStack : IDataStructure {
 
     // Driver example
     override fun execute() {
-        push(1)
+        push("Item A",1)
         print()
-        push(2)
+        push("Item B",2)
         print()
-        push(3)
+        push("Item C",3)
         print()
         println(top())
         pop()

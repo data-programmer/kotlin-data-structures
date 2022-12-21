@@ -2,27 +2,27 @@ package queues
 
 import IDataStructure
 
-class ArrayQueue : IDataStructure {
+class ArrayQueue : IDataStructure, IQueue {
 
     private var arrayQueue = arrayListOf<Int>()
 
     // Insert element into queue
-    fun enqueue(value: Int) {
+    override fun enqueue(label: String, value: Int) {
+        // Ignore label in this queue
         arrayQueue.add(value)
     }
 
     // Return first item in queue
-    fun first(): Int? = arrayQueue.firstOrNull()
+    override fun first(): Int? = arrayQueue.firstOrNull()
 
     // Remove and returns first item of queue
-    fun dequeue(): Int? = arrayQueue.removeFirstOrNull()
-
+    override fun dequeue(): Int? = arrayQueue.removeFirstOrNull()
 
     // Check if queue is empty
-    fun isEmpty(): Boolean = arrayQueue.size == 0
+    override fun isEmpty(): Boolean = arrayQueue.size == 0
 
     // Get size of array queue
-    fun size(): Int = arrayQueue.size
+    override fun size(): Int = arrayQueue.size
 
     // Print state of queue
     override fun print() {
@@ -33,11 +33,11 @@ class ArrayQueue : IDataStructure {
 
     // Driver example
     override fun execute() {
-        enqueue(1)
+        enqueue("Item A",1)
         print()
-        enqueue(2)
+        enqueue("Item B",2)
         print()
-        enqueue(3)
+        enqueue("Item C",3)
         print()
         println("First: ${first()}")
         dequeue()

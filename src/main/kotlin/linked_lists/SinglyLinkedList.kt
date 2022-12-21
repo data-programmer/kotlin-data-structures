@@ -2,21 +2,21 @@ package linked_lists
 
 import IDataStructure
 
-class SinglyLinkedList : IDataStructure {
+class SinglyLinkedList : IDataStructure, ILinkedList {
 
     private var head: Node? = null
     private var tail: Node? = null
     var size: Int = 0
 
     // Insert node at beginning of list
-    fun insert(label: String, data: Int) {
+    override fun insert(label: String, data: Int) {
         head = Node(label, data, head)
         if (isEmpty()) tail = head
         size++
     }
 
     // Append node to end of list
-    fun append(label: String, data: Int) {
+    override fun append(label: String, data: Int) {
         val node = Node(label, data)
         if (isEmpty()) head = node
         else tail?.next = node
@@ -25,11 +25,11 @@ class SinglyLinkedList : IDataStructure {
     }
 
     // Remove node at start of list
-    fun removeFirst(): Int? {
+    override fun removeFirst(): Node? {
         return head?.let { oldHead ->
             head = oldHead.next
             size--
-            oldHead.data
+            oldHead
         }
     }
 
@@ -37,7 +37,7 @@ class SinglyLinkedList : IDataStructure {
     fun first(): Int? = head?.data
 
     // Check if list is empty
-    fun isEmpty(): Boolean = size == 0
+    override fun isEmpty(): Boolean = size == 0
 
     // Print the state of the list
     override fun print() {
@@ -59,12 +59,5 @@ class SinglyLinkedList : IDataStructure {
         removeFirst()
         print()
     }
-
-    // Node class
-    inner class Node(
-        val label: String,
-        val data: Int,
-        var next: Node? = null
-    )
 
 }

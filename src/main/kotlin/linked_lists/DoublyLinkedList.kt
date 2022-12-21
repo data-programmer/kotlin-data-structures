@@ -2,7 +2,7 @@ package linked_lists
 
 import IDataStructure
 
-class DoublyLinkedList : IDataStructure {
+class DoublyLinkedList : IDataStructure, ILinkedList {
 
     private var head: Node? = null
     private var tail: Node? = null
@@ -15,17 +15,17 @@ class DoublyLinkedList : IDataStructure {
     }
 
     // Insert node at beginning of list
-    fun insert(label: String, data: Int) {
+    override fun insert(label: String, data: Int) {
         addBetween(label, data, head, head?.next)
     }
 
     // Append node to end of list
-    fun append(label: String, data: Int) {
+    override fun append(label: String, data: Int) {
         addBetween(label, data, tail?.prev, tail)
     }
 
     // Remove node at start of list
-    fun removeFirst(): Node? {
+    override fun removeFirst(): Node? {
         if (isEmpty()) return null
         return remove(head?.next)
     }
@@ -55,7 +55,7 @@ class DoublyLinkedList : IDataStructure {
     }
 
     // Check if list is empty
-    fun isEmpty(): Boolean = size == 0
+    override fun isEmpty(): Boolean = size == 0
 
     // Print the state of the list
     override fun print() {
@@ -82,13 +82,5 @@ class DoublyLinkedList : IDataStructure {
         removeLast()
         print()
     }
-
-    // Node class
-    inner class Node(
-        val label: String,
-        val data: Int,
-        var next: Node? = null,
-        var prev: Node? = null
-    )
 
 }

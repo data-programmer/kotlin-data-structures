@@ -3,26 +3,26 @@ package queues
 import IDataStructure
 import linked_lists.SinglyLinkedList
 
-class LinkedListQueue : IDataStructure {
+class LinkedListQueue : IDataStructure, IQueue {
 
     private val singlyLinkedList = SinglyLinkedList()
 
     // Add item to queue
-    fun enqueue(label: String, value: Int) {
+    override fun enqueue(label: String, value: Int) {
         singlyLinkedList.append(label, value)
     }
 
     // Return first item in queue
-    fun first(): Int? = singlyLinkedList.first()
+    override fun first(): Int? = singlyLinkedList.first()
 
     // Remove and returns first item in queue
-    fun dequeue(): Int? = singlyLinkedList.removeFirst()
+    override fun dequeue(): Int? = singlyLinkedList.removeFirst()?.data
 
     // Check if queue is empty
-    fun isEmpty(): Boolean = singlyLinkedList.isEmpty()
+    override fun isEmpty(): Boolean = singlyLinkedList.isEmpty()
 
     // Get size of linked list queue
-    fun size(): Int = singlyLinkedList.size
+    override fun size(): Int = singlyLinkedList.size
 
     // Print state of queue
     override fun print() {

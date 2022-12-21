@@ -5,6 +5,7 @@ import queues.ArrayQueue
 import queues.LinkedListQueue
 import stacks.ArrayStack
 import stacks.LinkedListStack
+import trees.BinaryTree
 
 val linkedLists: List<IDataStructure> = listOf(
     SinglyLinkedList(),
@@ -22,7 +23,9 @@ val queues: List<IDataStructure> = listOf(
     LinkedListQueue()
 )
 
-val binaryTrees: List<IDataStructure> = emptyList()
+val trees: List<IDataStructure> = listOf(
+    BinaryTree()
+)
 
 val tables: List<IDataStructure> = emptyList()
 
@@ -45,7 +48,11 @@ fun main() {
         queueStructure.execute()
     }
 
-
+    // Execute all tree data structures
+    trees.forEach { treeStructure ->
+        println(treeStructure::class.java)
+        treeStructure.execute()
+    }
 
     // Execute all table data structures
 
