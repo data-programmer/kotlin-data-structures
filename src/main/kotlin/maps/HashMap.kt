@@ -1,8 +1,12 @@
 package maps
 
 import IDataStructure
+import kotlin.collections.HashMap
 
-class HashTable : IDataStructure {
+
+class HashMap : IDataStructure {
+
+
     override fun print() {
         TODO("Not yet implemented")
     }

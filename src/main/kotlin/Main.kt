@@ -1,7 +1,7 @@
 import linked_lists.CircularSinglyLinkedList
 import linked_lists.DoublyLinkedList
 import linked_lists.SinglyLinkedList
-import maps.HashTable
+import maps.HashMap
 import maps.UnsortedMap
 import queues.ArrayQueue
 import queues.LinkedListQueue
@@ -31,7 +31,7 @@ val trees: List<IDataStructure> = listOf(
 
 val maps: List<IDataStructure> = listOf(
     UnsortedMap(),
-    HashTable()
+    // HashMap()
 )
 
 fun main() {
