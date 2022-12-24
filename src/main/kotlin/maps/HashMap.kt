@@ -1,7 +1,6 @@
 package maps
 
 import IDataStructure
-import kotlin.collections.HashMap
 
 
 class HashMap : IDataStructure {
