@@ -1,6 +1,8 @@
 import linked_lists.CircularSinglyLinkedList
 import linked_lists.DoublyLinkedList
 import linked_lists.SinglyLinkedList
+import maps.HashTable
+import maps.UnsortedMap
 import queues.ArrayQueue
 import queues.LinkedListQueue
 import stacks.ArrayStack
@@ -27,7 +29,10 @@ val trees: List<IDataStructure> = listOf(
     BinaryTree()
 )
 
-val tables: List<IDataStructure> = emptyList()
+val maps: List<IDataStructure> = listOf(
+    UnsortedMap(),
+    HashTable()
+)
 
 fun main() {
     // Execute all list data structures
@@ -49,12 +54,16 @@ fun main() {
     }
 
     // Execute all tree data structures
-    trees.forEach { treeStructure ->
-        println(treeStructure::class.java)
-        treeStructure.execute()
-    }
+//    trees.forEach { treeStructure ->
+//        println(treeStructure::class.java)
+//        treeStructure.execute()
+//    }
 
-    // Execute all table data structures
+    // Execute all map data structures
+    maps.forEach { mapStructure ->
+        println(mapStructure::class.java)
+        mapStructure.execute()
+    }
 
     // Execute all binary tree data structures
 
